@@ -10,6 +10,7 @@ application/logs/*
 
 application/composer.lock
 application/vendor/
+application/.env
 
 composer.lock
 
