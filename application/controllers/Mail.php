@@ -33,11 +33,11 @@ class Mail extends CI_Controller
             //Server settings
             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.zoho.com';  					  // Specify main and backup SMTP servers
+            $mail->Host = getenv('SMTP_HOST');  					  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'tosin@fungifting.com';                 // SMTP username
-            $mail->Password = '##############';                    // SMTP password
-            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Username = getenv('SMTP_USERNAME');                 // SMTP username
+            $mail->Password = getenv('SMTP_PASSWORD');                    // SMTP password
+            $mail->SMTPSecure = getenv('SMTP_SECURE_PROTOCOL');     // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 465;                                    // TCP port to connect to
 
                 //Recipients
