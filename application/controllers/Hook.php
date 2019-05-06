@@ -8,10 +8,16 @@ class Hook extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url', 'form'));
         $this->load->library(array('session','phpmailer'));
+        $this->output->enable_profiler(true);
+        $this->load->model('hook_model');
     }
 
     public function index()
     {
         echo "Testing hook dotenv; checking db hostname = " . getenv('DATABASE_HOSTNAME');
+
+
+
+        echo "<br/>base url: " . base_url();
     }
 }
